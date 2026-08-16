@@ -1,0 +1,20 @@
+title: SleekSlateStudio
+tagline: "Art That Elevates Every Space"
+description: "Premium wall art and posters — digital downloads and museum-grade prints. Modern minimalist designs, botanical prints, vintage artwork, and curated collections."
+etsy_shop_url: "https://www.etsy.com/shop/SleekSlateStudio"
+url: "" # fill in once you know your github.io URL or custom domain
+baseurl: ""
+
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+
+collections:
+  products:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

@@ -1,0 +1,53 @@
+---
+layout: default
+title: ""
+description: "Shop premium wall art posters — Formula 1, Yayoi Kusama art, sports wall art, and Islamic calligraphy. Digital downloads and museum-grade prints. Turn empty walls into stories."
+---
+
+<section class="hero">
+  <img src="{{ '/assets/img/banner.png' | relative_url }}" alt="{{ site.title }} — wall art and posters">
+  <div class="hero-caption">
+    <h1>Turn Empty Walls into Stories</h1>
+    <p>{{ site.description }}</p>
+  </div>
+</section>
+
+{% assign cats = site.data.products | map: "category" | uniq %}
+
+<section class="categories">
+  <div class="container">
+    <h2>Shop by Collection</h2>
+    <p class="sub">Every piece is available as an instant digital download or a museum-grade print.</p>
+    <div class="cat-grid">
+      {% for cat in cats %}
+        {% assign items = site.data.products | where: "category", cat %}
+        {% assign slug = cat | slugify %}
+        <a class="cat-card" href="{{ '/shop/' | append: slug | append: '.html' | relative_url }}">
+          <div class="count">{{ items.size }} design{% if items.size != 1 %}s{% endif %}</div>
+          <h3>{{ cat }}</h3>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <div>
+      <h4>Instant Digital Download</h4>
+      <p>Print-ready files delivered the moment your order is confirmed.</p>
+    </div>
+    <div>
+      <h4>Museum-Grade Prints</h4>
+      <p>Premium matte posters shipped to your door (USA).</p>
+    </div>
+    <div>
+      <h4>300 DPI Resolution</h4>
+      <p>Crisp, gallery-quality artwork at every size.</p>
+    </div>
+    <div>
+      <h4>Made With Passion</h4>
+      <p>Carefully crafted designs for every space and style.</p>
+    </div>
+  </div>
+</section>
