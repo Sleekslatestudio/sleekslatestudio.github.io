@@ -4,28 +4,40 @@ title: ""
 description: "Shop premium wall art posters — Formula 1, Yayoi Kusama art, sports wall art, and Islamic calligraphy. Digital downloads and museum-grade prints. Turn empty walls into stories."
 ---
 
-<section class="hero">
+<section class="hero hero-compact">
   <img src="{{ '/assets/img/banner.png' | relative_url }}" alt="{{ site.title }} — wall art and posters">
-  <div class="hero-caption">
-    <h1>Turn Empty Walls into Stories</h1>
-    <p>{{ site.description }}</p>
-  </div>
 </section>
 
 {% assign cats = site.data.products | map: "category" | uniq %}
 
-<section class="categories">
+<section class="filter-bar">
   <div class="container">
-    <h2>Shop by Collection</h2>
-    <p class="sub">Every piece is available as an instant digital download or a museum-grade print.</p>
-    <div class="cat-grid">
+    <div class="filter-pills">
+      <a href="{{ '/' | relative_url }}" class="pill active">All ({{ site.data.products.size }})</a>
       {% for cat in cats %}
         {% assign items = site.data.products | where: "category", cat %}
         {% assign slug = cat | slugify %}
-        <a class="cat-card" href="{{ '/shop/' | append: slug | append: '.html' | relative_url }}">
-          <div class="count">{{ items.size }} design{% if items.size != 1 %}s{% endif %}</div>
-          <h3>{{ cat }}</h3>
-        </a>
+        <a href="{{ '/shop/' | append: slug | append: '.html' | relative_url }}" class="pill">{{ cat }} ({{ items.size }})</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="products-section" style="padding-top:0;">
+  <div class="container">
+    <div class="product-grid">
+      {% for p in site.data.products %}
+        <div class="product-card">
+          <img src="{{ p.image | relative_url }}" alt="{{ p.title }}" loading="lazy">
+          <div class="product-info">
+            <h3>{{ p.title }}</h3>
+            <div class="price-row">
+              <span class="price">${{ p.price }}</span>
+              {% if p.original_price %}<span class="price-orig">${{ p.original_price }}</span>{% endif %}
+            </div>
+            <a class="view-btn" href="{{ p.url }}" target="_blank" rel="noopener">View on Etsy</a>
+          </div>
+        </div>
       {% endfor %}
     </div>
   </div>
