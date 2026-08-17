@@ -51,14 +51,14 @@ nav.main-nav a:hover{color:var(--sage);}
 
 /* Hero */
 .hero{position:relative;}
-.hero img{width:100%; display:block; max-height:420px; object-fit:cover;}
+.hero{background:var(--ivory);}
+.hero img{width:100%; display:block; max-height:420px; object-fit:contain;}
+.hero-compact img{max-height:260px; object-fit:contain;}
 .hero-caption{
   text-align:center; padding:56px 24px 40px; background:var(--ivory);
 }
 .hero-caption h1{font-size:40px; margin-bottom:10px;}
 .hero-caption p{color:var(--taupe); font-size:16px; max-width:520px; margin:0 auto;}
-
-.hero-compact img{max-height:220px;}
 
 /* Filter pill bar */
 .filter-bar{
