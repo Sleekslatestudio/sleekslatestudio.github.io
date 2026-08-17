@@ -58,6 +58,21 @@ nav.main-nav a:hover{color:var(--sage);}
 .hero-caption h1{font-size:40px; margin-bottom:10px;}
 .hero-caption p{color:var(--taupe); font-size:16px; max-width:520px; margin:0 auto;}
 
+.hero-compact img{max-height:220px;}
+
+/* Filter pill bar */
+.filter-bar{
+  background:var(--ivory); border-bottom:1px solid var(--dusty-beige);
+  padding:18px 0; position:sticky; top:73px; z-index:40;
+}
+.filter-pills{display:flex; flex-wrap:wrap; gap:10px;}
+.pill{
+  padding:8px 18px; border-radius:999px; border:1px solid var(--dusty-beige);
+  font-size:13px; color:var(--charcoal); background:var(--cream); white-space:nowrap;
+}
+.pill:hover{border-color:var(--sage);}
+.pill.active{background:var(--soft-black); color:var(--ivory); border-color:var(--soft-black);}
+
 /* Category tiles */
 .categories{padding:60px 0; }
 .categories h2{text-align:center; font-size:30px; margin-bottom:8px;}
