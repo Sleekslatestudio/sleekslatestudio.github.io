@@ -1,0 +1,28 @@
+---
+layout: default
+title: "Cozy Wall Decor & Japanese Art Posters"
+description: "Moody Japanese cityscape and Mount Fuji wall art posters — cyberpunk night scenes, sunset landscapes, and cozy room decor. Digital download or museum-grade print."
+---
+<section class="products-section">
+  <div class="container">
+    <div class="breadcrumb"><a href="{{ '/' | relative_url }}">Home</a> / Cozy Wall Decor</div>
+    <h1>Cozy Wall Decor</h1>
+    <p style="color:var(--taupe)">Moody Japanese cityscapes, Mount Fuji, and atmospheric night scenes.</p>
+    {% assign items = site.data.products | where: "category", "Cozy Wall Decor" %}
+    <div class="product-grid">
+      {% for p in items %}
+        <div class="product-card">
+          <img src="{{ p.image | relative_url }}" alt="{{ p.title }}" loading="lazy">
+          <div class="product-info">
+            <h3>{{ p.title }}</h3>
+            <div class="price-row">
+              <span class="price">${{ p.price }}</span>
+              {% if p.original_price %}<span class="price-orig">${{ p.original_price }}</span>{% endif %}
+            </div>
+            <a class="view-btn" href="{{ p.url }}" target="_blank" rel="noopener">View on Etsy</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

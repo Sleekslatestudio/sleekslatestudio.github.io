@@ -1,0 +1,28 @@
+---
+layout: default
+title: "Animal Wall Art & Retro Cat Kitchen Prints"
+description: "Retro Japanese-style cat kitchen prints and animal wall art posters. Digital download or museum-grade print."
+---
+<section class="products-section">
+  <div class="container">
+    <div class="breadcrumb"><a href="{{ '/' | relative_url }}">Home</a> / Animal Wall Art</div>
+    <h1>Animal Wall Art</h1>
+    <p style="color:var(--taupe)">Playful retro cat kitchen prints and animal-themed decor.</p>
+    {% assign items = site.data.products | where: "category", "Animal Wall Art" %}
+    <div class="product-grid">
+      {% for p in items %}
+        <div class="product-card">
+          <img src="{{ p.image | relative_url }}" alt="{{ p.title }}" loading="lazy">
+          <div class="product-info">
+            <h3>{{ p.title }}</h3>
+            <div class="price-row">
+              <span class="price">${{ p.price }}</span>
+              {% if p.original_price %}<span class="price-orig">${{ p.original_price }}</span>{% endif %}
+            </div>
+            <a class="view-btn" href="{{ p.url }}" target="_blank" rel="noopener">View on Etsy</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
