@@ -31,6 +31,7 @@ description: "Shop premium wall art posters — Formula 1, Yayoi Kusama art, spo
           <img src="{{ p.image | relative_url }}" alt="{{ p.title }}" loading="lazy">
           <div class="product-info">
             <h3>{{ p.title }}</h3>
+            {% if p.description %}<p class="product-desc">{{ p.description }} <a href="{{ '/info/sizes-and-shipping.html' | relative_url }}" class="details-link">Full details</a></p>{% endif %}
             <div class="price-row">
               <span class="price">${{ p.price }}</span>
               {% if p.original_price %}<span class="price-orig">${{ p.original_price }}</span>{% endif %}
